@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Moussa | Mobile & Game Developer (Flutter, Dart, Unity, C#)</title>
+  <meta name="description" content="Portfolio of Mohamed Moussa — Junior Mobile & Game Developer specializing in Flutter, Dart, Unity, and C#, backed by 1.5+ years of real-world IT & network engineering.">
+  <meta name="keywords" content="Mohamed Moussa, Flutter Developer, Dart, Unity C#, Mobile Developer Alexandria, Egypt, CCNA, Front-Line IT Support, YLB, Waslny">
+  <meta name="author" content="Mohamed Moussa">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohamed Moussa | Mobile & Game Developer">
+  <meta property="og:description" content="Two years on support lines taught me what broken software feels like; that is the standard I build to.">
+  <meta property="og:image" content="assets/images/mohamed-portrait1.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. INTERACTIVE SPLASH SCREEN & ENTRANCE ANIMATION (0 - 2.0s)
+       ========================================================================== -->
+  <div id="splash-screen">
+    <div class="splash-terminal">
+      <div class="splash-header">
+        <div class="terminal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-title">moussa@dev-sys: ~/kernel/init</div>
+        <div style="width: 36px;"></div>
+      </div>
+      <div class="splash-body">
+        <div class="splash-line"><span class="cyan">[SYSTEM]</span> Initializing Developer Architecture v2.6.4...</div>
+        <div class="splash-line"><span class="cyan">[STACK]</span> Flutter / Dart / Unity 3D / C# / Cisco IOS</div>
+        <div class="splash-line"><span class="cyan">[CORE_PHILOSOPHY]</span> Loading runtime directive...</div>
+        <div class="splash-typing-container">
+          <span class="splash-prompt">&gt;</span>
+          <span id="splash-text"></span>
+          <span class="terminal-cursor"></span>
+        </div>
+      </div>
+    </div>
+    <button id="skip-splash" class="splash-skip">Press [ESC] or Click to Skip Entrance</button>
+  </div>
+
+  <!-- ==========================================================================
+       SITE NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Mohamed Moussa Homepage">
+        <div class="brand-icon">MM</div>
+        <span class="brand-text">MOHAMED MOUSSA</span>
+        <span class="brand-tag">DEV.PORTFOLIO</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#origin">Support Origin</a></li>
+          <li><a href="#skills">Skills Matrix</a></li>
+          <li><a href="#projects">Featured Projects</a></li>
+          <li><a href="#experience">Timeline</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="MOHAMED MOUSSA CV.pdf" target="_blank" class="nav-btn-cv" title="View & Download Official PDF CV">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>View CV (PDF)</span>
+        </a>
+        <button class="nav-toggle-btn" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu-drawer">
+    <a href="#hero">Overview</a>
+    <a href="#origin">Support Origin</a>
+    <a href="#skills">Skills Matrix</a>
+    <a href="#projects">Featured Projects (YLB Configurator)</a>
+    <a href="#experience">Experience & Education</a>
+    <a href="#contact">Get in Touch</a>
+    <a href="MOHAMED MOUSSA CV.pdf" target="_blank" style="color: var(--accent-cyan); font-weight: 700;">
+      <i class="fa-solid fa-download"></i> Download CV (PDF)
+    </a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         2. HERO MASTHEAD SECTION
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-status-pill">
+            <span class="pulse-dot"></span>
+            <span>OPEN TO JUNIOR MOBILE & GAME DEV ROLES</span>
+          </div>
+
+          <div class="hero-name-title">
+            <h1>MOHAMED MOUSSA</h1>
+            <div class="hero-core-title">
+              <span>Mobile & Game Developer</span>
+              <span class="title-accent">— Flutter, Dart, Unity, and C#</span>
+              <h2 class="hero-cta-tagline">Have an app idea? Let’s build your MVP.</h2>
+            </div>
+          </div>
+
+          <!-- Quote Banner Card -->
+          <div class="quote-banner-card">
+            <p>"Two years on support lines taught me what broken software feels like; that is the standard I build to."</p>
+            <div class="quote-author">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Mohamed Moussa — Software Developer</span>
+            </div>
+          </div>
+
+          <!-- Quick Meta Badges -->
+          <div class="meta-badges-row">
+            <span class="meta-badge"><i class="fa-solid fa-location-dot"></i> Alexandria, Egypt</span>
+            <span class="meta-badge highlight"><i class="fa-solid fa-certificate"></i> CCNA Certified</span>
+            <span class="meta-badge"><i class="fa-solid fa-graduation-cap"></i> Alexandria University SIM</span>
+            <span class="meta-badge highlight"><i class="fa-solid fa-bolt"></i> Open to Junior Dev Roles</span>
+          </div>
+
+          <!-- Key Metrics Counters -->
+          <div class="metrics-counter-grid">
+            <div class="metric-item">
+              <div class="metric-number-wrap">
+                <span class="metric-val" data-target="1.5">0</span>
+                <span class="metric-suffix">+ Yrs</span>
+              </div>
+              <span class="metric-label">IT Specialist & Infrastructure</span>
+            </div>
+
+            <div class="metric-item">
+              <div class="metric-number-wrap">
+                <span class="metric-val" data-target="4">0</span>
+                <span class="metric-suffix">+</span>
+              </div>
+              <span class="metric-label">Projects Shipped or In Build</span>
+            </div>
+
+            <div class="metric-item">
+              <div class="metric-number-wrap">
+                <span class="metric-val" data-target="2">0</span>
+                <span class="metric-suffix">Lang</span>
+              </div>
+              <span class="metric-label">Arabic (Native) & English (Professional)</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn-primary">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Start Your MVP Project</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#projects" class="btn-outline">
+              <i class="fa-solid fa-folder-open"></i>
+              <span>Explore Projects</span>
+            </a>
+            <button class="btn-outline btn-copy-email" title="Copy Email">
+              <i class="fa-solid fa-copy"></i>
+              <span>Copy Email</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Visual Profile Card -->
+        <div class="hero-visual-card">
+          <div class="profile-img-container">
+            <img src="assets/images/mohamed-portrait1.jpg" alt="Mohamed Moussa - Mobile and Game Developer" class="profile-img">
+            <div class="profile-overlay-badge">
+              <div class="profile-badge-info">
+                <h4>Mohamed Moussa</h4>
+                <span>Mobile (Flutter) • Game (Unity) • Network (CCNA)</span>
+              </div>
+              <div class="pulse-dot"></div>
+            </div>
+          </div>
+
+          <!-- Defensive Architecture Code Snippet -->
+          <div class="profile-code-snippet">
+            <span class="comment">// The Support Origin Paradigm</span><br>
+            <span class="keyword">class</span> <span class="class">EngineeringMindset</span> {<br>
+            &nbsp;&nbsp;<span class="keyword">final</span> <span class="keyword">double</span> supportExpYears = <span class="number">1.5</span>;<br>
+            &nbsp;&nbsp;<span class="keyword">void</span> <span class="class">handleUserFrustration</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// "The user isn't confused — the product is."</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.findTheFriction();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.removeIt();<br>
+            &nbsp;&nbsp;}<br>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. THE "SUPPORT ORIGIN" NARRATIVE PROFILE
+         ========================================================================== -->
+    <section id="origin" class="section-pad support-origin-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Origin Story & Core Philosophy</span>
+          <h2 class="section-title">The Support Origin Narrative</h2>
+          <p class="section-subtitle">Why spending 1.5+ years on the receiving end of software failure makes me an obsessively user-first developer.</p>
+        </div>
+
+        <div class="support-narrative-card">
+          <!-- Featured Callout Banner -->
+          <div class="featured-callout-banner">
+            <div class="callout-icon">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <div class="callout-text">
+              <h3>"On a support line you learn fast that the user isn't confused — the product is."</h3>
+              <p>PRINCIPLE RECORDED DURING TECHNICAL SUPPORT & HELP DESK TENURES</p>
+            </div>
+          </div>
+
+          <!-- Narrative Body -->
+          <div class="narrative-body-text">
+            <p>
+              "I spent a year and a half answering calls from people whose software had just failed them, then carried that instinct into help desk and infrastructure work. When the same switch configuration had to be typed by hand across dozens of devices, I wrote a generator instead. <span class="highlight-quote">Find the friction, remove it.</span> Somewhere in there I stopped wanting to fix other people's software and started building my own."
+            </p>
+          </div>
+
+          <!-- 4 Pillars Grid -->
+          <div class="philosophy-grid">
+            <div class="philosophy-card">
+              <div class="philosophy-header">
+                <span class="philosophy-num">01</span>
+                <h4>Zero-Friction Flows</h4>
+              </div>
+              <p>Every extra click, ambiguous label, or loading stall is an invisible failure point. I design mobile interfaces that respect user attention and time.</p>
+            </div>
+
+            <div class="philosophy-card">
+              <div class="philosophy-header">
+                <span class="philosophy-num">02</span>
+                <h4>Defensive Coding</h4>
+              </div>
+              <p>Users will lose connectivity, input corrupt formats, and click buttons twice. I build robust error boundaries and offline-first state handling by default.</p>
+            </div>
+
+            <div class="philosophy-card">
+              <div class="philosophy-header">
+                <span class="philosophy-num">03</span>
+                <h4>Automation Instinct</h4>
+              </div>
+              <p>If an action has to be done twice, generate a script. Whether it's Cisco VLAN switch CLI or batch data mapping, manual repetition is technical debt.</p>
+            </div>
+
+            <div class="philosophy-card">
+              <div class="philosophy-header">
+                <span class="philosophy-num">04</span>
+                <h4>Network Awareness</h4>
+              </div>
+              <p>With CCNA certification, I understand TCP/IP, latency budgets, packet loss, and firewalls at Layer 2 & 3 — making my mobile REST API calls resilient.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. TECHNICAL SKILLS MATRIX (CATEGORIZED GRID)
+         ========================================================================== -->
+    <section id="skills" class="section-pad">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Engineering Competencies</span>
+          <h2 class="section-title">Technical Skills Matrix</h2>
+          <p class="section-subtitle">Bridging cross-platform mobile engineering, interactive game systems, and real-world networking infrastructure.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="skills-filter-nav">
+          <button class="skill-filter-btn active" data-filter="all">All Disciplines</button>
+          <button class="skill-filter-btn" data-filter="mobile">Mobile (Primary Focus)</button>
+          <button class="skill-filter-btn" data-filter="languages">Languages</button>
+          <button class="skill-filter-btn" data-filter="games">Game & Systems</button>
+          <button class="skill-filter-btn" data-filter="infra">Engineering & Infra</button>
+        </div>
+
+        <!-- Categorized Grid -->
+        <div class="skills-matrix-grid">
+          <!-- Category 1: Mobile Development (Primary Focus) -->
+          <div class="skill-category-card featured-category" data-category="mobile">
+            <div class="category-title-bar">
+              <div class="category-heading">
+                <div class="category-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h3>Mobile Development</h3>
+              </div>
+              <span class="focus-tag">PRIMARY FOCUS</span>
+            </div>
+            <div class="skill-chips-list">
+              <span class="skill-chip"><i class="fa-brands fa-flutter"></i> Flutter Framework</span>
+              <span class="skill-chip"><i class="fa-solid fa-code"></i> Dart</span>
+              <span class="skill-chip"><i class="fa-solid fa-cubes"></i> Cross-Platform Architecture</span>
+              <span class="skill-chip"><i class="fa-solid fa-diagram-project"></i> State Management (Bloc / Provider)</span>
+              <span class="skill-chip"><i class="fa-solid fa-route"></i> User Flow & Interface Design</span>
+              <span class="skill-chip"><i class="fa-solid fa-headset"></i> Building Around Real/Observed User Problems</span>
+              <span class="skill-chip"><i class="fa-solid fa-network-wired"></i> REST API Integration & Offline State</span>
+            </div>
+            <p class="skill-category-note">Directly applies support empathy to mobile user journeys, preventing user confusion before release.</p>
+          </div>
+
+          <!-- Category 2: Programming Languages -->
+          <div class="skill-category-card" data-category="languages">
+            <div class="category-title-bar">
+              <div class="category-heading">
+                <div class="category-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Programming Languages</h3>
+              </div>
+              <span class="focus-tag" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--accent-amber-dim);">CORE SYNTAX</span>
+            </div>
+            <div class="skill-chips-list">
+              <span class="skill-chip"><i class="fa-solid fa-code"></i> Dart (Mobile & Async)</span>
+              <span class="skill-chip"><i class="fa-solid fa-hashtag"></i> C# (.NET & Unity Engine)</span>
+              <span class="skill-chip"><i class="fa-brands fa-java"></i> Java (Android & OOP Foundations)</span>
+              <span class="skill-chip"><i class="fa-brands fa-python"></i> Python (Tooling & Data Scripting)</span>
+            </div>
+            <p class="skill-category-note">Strong typing discipline, object-oriented design patterns, memory awareness, and asynchronous stream handling.</p>
+          </div>
+
+          <!-- Category 3: Game & Interactive Systems -->
+          <div class="skill-category-card" data-category="games">
+            <div class="category-title-bar">
+              <div class="category-heading">
+                <div class="category-icon"><i class="fa-brands fa-unity"></i></div>
+                <h3>Game & Interactive Systems</h3>
+              </div>
+              <span class="focus-tag">INTERACTIVE LOGIC</span>
+            </div>
+            <div class="skill-chips-list">
+              <span class="skill-chip"><i class="fa-brands fa-unity"></i> Unity (2D & 3D)</span>
+              <span class="skill-chip"><i class="fa-solid fa-gamepad"></i> Gameplay & Combat Systems</span>
+              <span class="skill-chip"><i class="fa-solid fa-network-wired"></i> Hierarchical State Machines</span>
+              <span class="skill-chip"><i class="fa-solid fa-person-running"></i> Animation Controllers & Blends</span>
+              <span class="skill-chip"><i class="fa-solid fa-skull"></i> Boss & Encounter Design</span>
+              <span class="skill-chip"><i class="fa-solid fa-chart-line"></i> Difficulty & Phase Progression</span>
+              <span class="skill-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Game Feel & Micro-Feedback</span>
+            </div>
+            <p class="skill-category-note">Experience building responsive state-driven action engines with tight frame windows and dynamic difficulty curves.</p>
+          </div>
+
+          <!-- Category 4: Engineering & Infrastructure -->
+          <div class="skill-category-card" data-category="infra">
+            <div class="category-title-bar">
+              <div class="category-heading">
+                <div class="category-icon"><i class="fa-solid fa-server"></i></div>
+                <h3>Engineering & Infrastructure</h3>
+              </div>
+              <span class="focus-tag" style="border-color: #38E54D; color: #38E54D; background: rgba(56, 229, 77, 0.1);">CCNA LEVEL</span>
+            </div>
+            <div class="skill-chips-list">
+              <span class="skill-chip"><i class="fa-solid fa-sitemap"></i> Object-Oriented Design (OOP)</span>
+              <span class="skill-chip"><i class="fa-solid fa-terminal"></i> Internal Tooling & Script Generation</span>
+              <span class="skill-chip"><i class="fa-solid fa-file-excel"></i> Excel / VBA Automation (.xlsb)</span>
+              <span class="skill-chip"><i class="fa-solid fa-magnifying-glass-chart"></i> Debugging & Root-Cause Analysis</span>
+              <span class="skill-chip"><i class="fa-solid fa-network-wired"></i> Networking Fundamentals (CCNA)</span>
+              <span class="skill-chip"><i class="fa-solid fa-shield-virus"></i> Cisco IOS & Sophos Firewall Policy</span>
+            </div>
+            <p class="skill-category-note">Hardware, operating system diagnostics, structured cabling, and Layer 2/3 network engineering experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. FEATURED PROJECTS SHOWCASE (INTERACTIVE CARDS)
+         ========================================================================== -->
+    <section id="projects" class="section-pad">
+      <div class="container projects-container">
+        <div class="section-header">
+          <span class="section-tag">Shipped & In-Progress Builds</span>
+          <h2 class="section-title">Featured Projects Showcase</h2>
+          <p class="section-subtitle">Real applications, internal automation utilities, and interactive gameplay systems crafted with pragmatic engineering.</p>
+        </div>
+
+        <!-- PROJECT 1: YLB (YOUR LOCAL BRAND) - FEATURED APP -->
+        <div class="ylb-featured-card">
+          <div class="project-meta-header">
+            <div class="project-badge-group">
+              <span class="badge-featured"><i class="fa-solid fa-star"></i> Featured Mobile App</span>
+              <span class="badge-status"><i class="fa-solid fa-hammer"></i> IN DEVELOPMENT • FLUTTER & DART</span>
+            </div>
+            <span class="timeline-period-badge">Mobile Platform • B2B Apparel</span>
+          </div>
+
+          <h3 class="project-title">YLB (Your Local Brand) — Apparel Manufacturing & E-Commerce Platform</h3>
+          <p class="project-tagline">"Connecting new clothing brand founders directly with regional apparel factories."</p>
+
+          <p style="color: var(--text-secondary); font-size: 14px; max-width: 880px; margin-bottom: 20px;">
+            Founding a clothing label traditionally requires months of friction: navigating opaque textile brokers, unstandardized fabric weights, ambiguous print costs, and zero real-time visibility into production milestones. YLB transforms this by wrapping the entire factory production lifecycle into an intuitive, transparent 4-step mobile flow.
+          </p>
+
+          <!-- DYNAMIC 4-STEP FLOW CONFIGURATOR COMPONENT -->
+          <div class="configurator-wrapper">
+            <div class="configurator-header">
+              <h4>
+                <i class="fa-solid fa-sliders" style="color: var(--accent-cyan);"></i>
+                <span>Interactive 4-Step Production Configurator (Live Engine Simulator)</span>
+              </h4>
+
+              <div class="configurator-steps-nav">
+                <button class="step-indicator-btn active" data-step="1">
+                  <span class="step-num">01</span> Garment
+                </button>
+                <button class="step-indicator-btn" data-step="2">
+                  <span class="step-num">02</span> Fabric Spec
+                </button>
+                <button class="step-indicator-btn" data-step="3">
+                  <span class="step-num">03</span> Print & Cut
+                </button>
+                <button class="step-indicator-btn" data-step="4">
+                  <span class="step-num">04</span> Sample Order
+                </button>
+              </div>
+            </div>
+
+            <div class="configurator-grid">
+              <!-- Controls Column -->
+              <div class="configurator-controls">
+                <!-- STEP 1: Garment Selection -->
+                <div class="config-step-pane active" data-config-step="1">
+                  <div class="step-pane-title">
+                    <span>Step 1: Category & Garment Selection</span>
+                    <span style="font-size: 12px; font-family: var(--font-mono); color: var(--accent-cyan);">Pick Silhouette</span>
+                  </div>
+                  <p class="step-pane-desc">Choose the foundational cut designed for streetwear and modern brand lines.</p>
+
+                  <div class="options-grid">
+                    <div class="config-option-card selected" data-garment="Heavyweight Hoodie" data-price="28.00">
+                      <span class="option-name"><i class="fa-solid fa-shirt"></i> Heavyweight Hoodie</span>
+                      <span class="option-sub">Drop-shoulder streetwear cut</span>
+                      <span class="option-price-tag">Base: $28.00/unit</span>
+                    </div>
+
+                    <div class="config-option-card" data-garment="Oversized Tee" data-price="14.00">
+                      <span class="option-name"><i class="fa-solid fa-shirt"></i> Oversized Boxy Tee</span>
+                      <span class="option-sub">Ribbed collar, structured drape</span>
+                      <span class="option-price-tag">Base: $14.00/unit</span>
+                    </div>
+
+                    <div class="config-option-card" data-garment="Cargo Trousers" data-price="32.00">
+                      <span class="option-name"><i class="fa-solid fa-vest"></i> Cargo Trousers</span>
+                      <span class="option-sub">Multi-pocket tactical profile</span>
+                      <span class="option-price-tag">Base: $32.00/unit</span>
+                    </div>
+
+                    <div class="config-option-card" data-garment="Bomber Jacket" data-price="45.00">
+                      <span class="option-name"><i class="fa-solid fa-user-astronaut"></i> Bomber Jacket</span>
+                      <span class="option-sub">Lined insulated outer shell</span>
+                      <span class="option-price-tag">Base: $45.00/unit</span>
+                    </div>
+                  </div>
+
+                  <div class="step-nav-footer">
+                    <div></div>
+                    <button class="btn-step-next">Next: Fabric Specs <i class="fa-solid fa-arrow-right"></i></button>
+                  </div>
+                </div>
+
+                <!-- STEP 2: Fabric Specification -->
+                <div class="config-step-pane" data-config-step="2">
+                  <div class="step-pane-title">
+                    <span>Step 2: Fabric & Material Specification</span>
+                    <span style="font-size: 12px; font-family: var(--font-mono); color: var(--accent-cyan);">Textile Quality</span>
+                  </div>
+                  <p class="step-pane-desc">Certified Egyptian & regional yarns with specified GSM (grams per sq meter).</p>
+
+                  <div class="options-grid">
+                    <div class="config-option-card selected" data-fabric="100% French Terry Cotton (420 GSM)" data-multiplier="1.25">
+                      <span class="option-name">100% French Terry (420 GSM)</span>
+                      <span class="option-sub">Ultra-dense, warm, loopback interior</span>
+                      <span class="option-price-tag">Tier: Premium (+25%)</span>
+                    </div>
+
+                    <div class="config-option-card" data-fabric="Combed Ringspun Cotton (240 GSM)" data-multiplier="1.0">
+                      <span class="option-name">Ringspun Cotton (240 GSM)</span>
+                      <span class="option-sub">Soft-touch, breathable summer weave</span>
+                      <span class="option-price-tag">Tier: Standard (1.0x)</span>
+                    </div>
+
+                    <div class="config-option-card" data-fabric="Fleece Poly-Cotton Blend (380 GSM)" data-multiplier="1.15">
+                      <span class="option-name">Poly-Cotton Fleece (380 GSM)</span>
+                      <span class="option-sub">Anti-pilling brushed fleece interior</span>
+                      <span class="option-price-tag">Tier: Heavyweight (+15%)</span>
+                    </div>
+
+                    <div class="config-option-card" data-fabric="Tech Ripstop Weatherproof (300 GSM)" data-multiplier="1.35">
+                      <span class="option-name">Tech Ripstop (300 GSM)</span>
+                      <span class="option-sub">Water-repellent woven grid structure</span>
+                      <span class="option-price-tag">Tier: Technical (+35%)</span>
+                    </div>
+                  </div>
+
+                  <div class="step-nav-footer">
+                    <button class="btn-step-prev"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <button class="btn-step-next">Next: Custom Cuts & Print <i class="fa-solid fa-arrow-right"></i></button>
+                  </div>
+                </div>
+
+                <!-- STEP 3: Printing & Custom Cuts -->
+                <div class="config-step-pane" data-config-step="3">
+                  <div class="step-pane-title">
+                    <span>Step 3: Custom Cuts & Printing Options</span>
+                    <span style="font-size: 12px; font-family: var(--font-mono); color: var(--accent-cyan);">Finishing</span>
+                  </div>
+                  <p class="step-pane-desc">Select printing technique and primary fabric color swatch.</p>
+
+                  <div class="options-grid">
+                    <div class="config-option-card selected" data-custom="High-Density Puff Embroidery" data-cost="6.50">
+                      <span class="option-name">High-Density 3D Puff Embroidery</span>
+                      <span class="option-sub">Tactile, raised dimensional threadwork</span>
+                      <span class="option-price-tag">+$6.50 / piece</span>
+                    </div>
+
+                    <div class="config-option-card" data-custom="Plastisol Screen Printing" data-cost="3.20">
+                      <span class="option-name">Plastisol Screen Printing</span>
+                      <span class="option-sub">Vibrant, durable 4-color strike-off</span>
+                      <span class="option-price-tag">+$3.20 / piece</span>
+                    </div>
+
+                    <div class="config-option-card" data-custom="Direct-To-Garment (DTG)" data-cost="5.00">
+                      <span class="option-name">Direct-To-Garment (DTG)</span>
+                      <span class="option-sub">Photorealistic gradients, soft feel</span>
+                      <span class="option-price-tag">+$5.00 / piece</span>
+                    </div>
+
+                    <div class="config-option-card" data-custom="Vintage Acid Mineral Wash" data-cost="4.50">
+                      <span class="option-name">Vintage Acid Mineral Wash</span>
+                      <span class="option-sub">Distressed vintage wash with raw hem</span>
+                      <span class="option-price-tag">+$4.50 / piece</span>
+                    </div>
+                  </div>
+
+                  <div style="margin-top: 10px;">
+                    <label style="font-size: 12px; font-family: var(--font-mono); color: var(--text-secondary);">Garment Color Swatch:</label>
+                    <div class="color-swatches-row">
+                      <button class="color-swatch-btn active" data-color-name="Onyx Black" data-color-hex="#181A20" style="background: #181A20;" title="Onyx Black"></button>
+                      <button class="color-swatch-btn" data-color-name="Slate Charcoal" data-color-hex="#343A46" style="background: #343A46;" title="Slate Charcoal"></button>
+                      <button class="color-swatch-btn" data-color-name="Electric Cyan" data-color-hex="#00B4D8" style="background: #00B4D8;" title="Electric Cyan"></button>
+                      <button class="color-swatch-btn" data-color-name="Desert Sand" data-color-hex="#DDB892" style="background: #DDB892;" title="Desert Sand"></button>
+                    </div>
+                  </div>
+
+                  <div class="step-nav-footer">
+                    <button class="btn-step-prev"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <button class="btn-step-next">Next: Sample Batch & Quote <i class="fa-solid fa-arrow-right"></i></button>
+                  </div>
+                </div>
+
+                <!-- STEP 4: Sample Order & Doorstep Delivery -->
+                <div class="config-step-pane" data-config-step="4">
+                  <div class="step-pane-title">
+                    <span>Step 4: Sample Order & Doorstep Delivery</span>
+                    <span style="font-size: 12px; font-family: var(--font-mono); color: var(--accent-cyan);">Finalize & Track</span>
+                  </div>
+                  <p class="step-pane-desc">Slide batch quantity to observe real-time factory tier economies of scale.</p>
+
+                  <div class="order-qty-control">
+                    <div style="display:flex; flex-direction:column; gap:2px;">
+                      <span style="font-size: 13px; font-weight:700; color:#fff;">Order Volume:</span>
+                      <span style="font-size: 11px; color:var(--text-secondary);">Volume tier discounts apply at 25, 50, 100+</span>
+                    </div>
+                    <input type="range" id="ylb-qty-slider" class="qty-slider" min="1" max="150" value="25" step="1">
+                    <span id="ylb-qty-display" class="qty-value">25 pcs</span>
+                  </div>
+
+                  <!-- Tracking Simulation -->
+                  <div class="tracking-simulation">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <div>
+                      <strong style="color: #FFFFFF;">Doorstep Courier Tracking Simulation Active:</strong>
+                      <p id="ylb-turnaround-time" style="color: var(--text-secondary); margin-top:2px;">Estimated Production & Dispatch: 4-6 Business Days</p>
+                    </div>
+                  </div>
+
+                  <div class="step-nav-footer">
+                    <button class="btn-step-prev"><i class="fa-solid fa-arrow-left"></i> Adjust Specs</button>
+                    <button class="btn-step-next" style="background: var(--accent-amber); color: #080B10;">
+                      <i class="fa-solid fa-check"></i> Sample Order Verified
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Preview Card Column -->
+              <div class="configurator-preview-card">
+                <div class="preview-visual-box">
+                  <span id="ylb-live-spec" class="live-spec-badge">Heavyweight Hoodie • Onyx Black</span>
+                  
+                  <svg id="ylb-preview-svg" class="garment-svg-preview" viewBox="0 0 180 180" style="color: #181A20;">
+                    <g id="ylb-svg-path">
+                      <!-- Rendered dynamically via JS -->
+                      <path d="M50 35 L75 20 L105 20 L130 35 L120 70 L105 60 L105 130 L75 130 L75 60 L60 70 Z" fill="currentColor" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="preview-summary-list">
+                  <div class="summary-row">
+                    <span>Garment & Color:</span>
+                    <span id="sum-garment">Heavyweight Hoodie (Onyx Black)</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Material Spec:</span>
+                    <span id="sum-fabric">100% French Terry (420 GSM)</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Custom Treatment:</span>
+                    <span id="sum-custom">High-Density 3D Puff Embroidery</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Batch Volume:</span>
+                    <span id="sum-units">25 pcs</span>
+                  </div>
+                </div>
+
+                <div class="price-estimation-box">
+                  <div>
+                    <span class="price-label">Real-Time Est. / Unit</span>
+                    <div id="ylb-price-per-unit" class="price-amount">$37.35</div>
+                  </div>
+                  <div style="text-align: right;">
+                    <span class="price-label">Batch Total Quote</span>
+                    <div id="ylb-price-total" class="price-amount" style="color: var(--accent-amber);">$933.75</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 SECONDARY PROJECTS SUBGRID -->
+        <div class="projects-subgrid">
+          <!-- PROJECT 2: Waslny - Student Transport App -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="timeline-period-badge" style="color: #38E54D; background: rgba(56, 229, 77, 0.1);">SHIPPED MOBILE APP</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Alexandria, EG</span>
+            </div>
+
+            <h3>Waslny — Student Transport App</h3>
+            <p class="project-tagline-sub">"A student transport app for a problem I watched fellow students face every morning. Owned problem definition and core flows."</p>
+
+            <div class="project-stats-row">
+              <span class="project-stat-pill"><i class="fa-solid fa-users"></i> Campus Route Problem Solved</span>
+              <span class="project-stat-pill"><i class="fa-solid fa-compass"></i> Real-Time Hub Tracking</span>
+              <span class="project-stat-pill"><i class="fa-solid fa-ticket"></i> Seat Reservation Engine</span>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+              Students commuting to Alexandria University struggled with unpredictable schedule delays and overcrowded shuttles. Rather than building a generic mapping app, Waslny simplified the cognitive load down to 2 taps: select home hub, see immediate bus ETA, and lock guaranteed seats.
+            </p>
+
+            <div style="background: #11161E; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); padding: 12px; margin-top: auto;">
+              <span style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-cyan); display:block; margin-bottom: 4px;">KEY TECHNICAL ARCHITECTURE:</span>
+              <span style="font-size: 12px; color: #E6EDF3;">State machine-driven schedule cache with offline fallback when cellular reception drops between campus tunnels.</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: 3 Nights - Faculty of Science, Alexandria University -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="timeline-period-badge" style="color: var(--accent-amber); background: var(--accent-amber-dim);">UNIVERSITY GAME</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Faculty of Science SIM</span>
+            </div>
+
+            <h3>3 Nights — Atmospheric Survival Build</h3>
+            <p class="project-tagline-sub">"Concept to playable build — my first proof of end-to-end delivery, not just prototyping."</p>
+
+            <div class="project-stats-row">
+              <span class="project-stat-pill"><i class="fa-brands fa-unity"></i> Unity 3D Engine</span>
+              <span class="project-stat-pill"><i class="fa-solid fa-lightbulb"></i> Dynamic Lighting State</span>
+              <span class="project-stat-pill"><i class="fa-solid fa-check-double"></i> End-to-End Shipped</span>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+              Developed within the Software Industry and Multimedia (SIM) program. Demonstrates full project lifecycle ownership: game mechanics, atmospheric sound design, hierarchical enemy AI state machines, and rigorous performance profiling for consistent 60 FPS delivery.
+            </p>
+
+            <div style="background: #11161E; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); padding: 12px; margin-top: auto;">
+              <span style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-amber); display:block; margin-bottom: 4px;">PROJECT OUTCOME:</span>
+              <span style="font-size: 12px; color: #E6EDF3;">Validated end-to-end production discipline from blank repo to finished playable build with zero game-breaking stalls.</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: VLAN Config Generator - Internal Automation Tool -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="timeline-period-badge" style="color: var(--accent-cyan); background: var(--accent-cyan-dim);">INTERNAL AUTOMATION TOOL</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">IT Engineering</span>
+            </div>
+
+            <h3>VLAN Config Generator</h3>
+            <p class="project-tagline-sub">"Internal tool that generates Cisco switch configurations previously typed by hand across dozens of devices."</p>
+
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+              When deploying multi-rack Cisco Catalyst networks, repetitive CLI typos create network loops and hours of downtime. Mohamed built this automation generator to transform switch datasheets into validated Cisco IOS terminal blocks instantly.
+            </p>
+
+            <!-- LIVE FUNCTIONAL GENERATOR WIDGET -->
+            <div class="vlan-generator-box">
+              <div class="vlan-inputs-grid">
+                <div class="vlan-input-group">
+                  <label for="vlan-switch-model">Switch Model:</label>
+                  <select id="vlan-switch-model">
+                    <option value="Catalyst 3850">Catalyst 3850</option>
+                    <option value="Catalyst 3560">Catalyst 3560</option>
+                    <option value="Catalyst 3750">Catalyst 3750</option>
+                    <option value="Catalyst 4900M">Catalyst 4900M</option>
+                  </select>
+                </div>
+
+                <div class="vlan-input-group">
+                  <label for="vlan-hostname">Hostname:</label>
+                  <input type="text" id="vlan-hostname" value="ALX-GIECO-SW01">
+                </div>
+
+                <div class="vlan-input-group">
+                  <label for="vlan-mgmt-ip">Management IP:</label>
+                  <input type="text" id="vlan-mgmt-ip" value="10.20.10.15">
+                </div>
+
+                <div class="vlan-input-group">
+                  <label for="vlan-profile">VLAN Architecture:</label>
+                  <select id="vlan-profile">
+                    <option value="industrial">Industrial Site (SCADA/PLC)</option>
+                    <option value="campus">Campus Network (Students/VoIP)</option>
+                    <option value="enterprise">Corporate Enterprise (Data/WiFi)</option>
+                  </select>
+                </div>
+              </div>
+
+              <button id="btn-generate-cli" class="btn-generate-cli">
+                <i class="fa-solid fa-gears"></i> Generate Cisco CLI Syntax
+              </button>
+
+              <div class="cli-output-container">
+                <button id="btn-copy-cli" class="btn-copy-cli" title="Copy CLI Commands">
+                  <i class="fa-solid fa-copy"></i> Copy CLI
+                </button>
+                <pre id="cli-code-output" class="cli-code"></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 5: One Boss - Unity Action Game -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="timeline-period-badge" style="color: #FF5F56; background: rgba(255, 95, 86, 0.15);">GAME ARCHIVE • IN BUILD</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Unity Action Engine</span>
+            </div>
+
+            <h3>One Boss — Sekiro-Style Combat Engine</h3>
+            <p class="project-tagline-sub">"Sekiro-style combat engine built around deflection, parry timing, posture pressure, and phase progression."</p>
+
+            <div class="project-stats-row">
+              <span class="project-stat-pill"><i class="fa-solid fa-shield"></i> 20 Escalating Encounter Phases</span>
+              <span class="project-stat-pill"><i class="fa-solid fa-skull-crossbones"></i> 0 Checkpoints (One Run, One Fight)</span>
+              <span class="project-stat-pill"><i class="fa-solid fa-user-gear"></i> 1 Designer (Systems, Feel, Art Direction)</span>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+              Engineered with extreme mechanical precision: deflection frame windows, visual spark telegraphs, poise break thresholds, and micro-stagger animations. If the player's parry timing is off by 60ms, posture breaks.
+            </p>
+
+            <!-- INTERACTIVE PARRY MECHANIC SIMULATOR -->
+            <div class="combat-sim-box">
+              <div class="posture-bar-wrapper">
+                <div class="posture-label">
+                  <span>BOSS POSTURE PRESSURE (SEKIRO SYSTEM):</span>
+                  <span id="posture-pct-label">65% / 100%</span>
+                </div>
+                <div class="posture-track">
+                  <div id="posture-fill-bar" class="posture-fill" style="width: 65%;"></div>
+                </div>
+              </div>
+
+              <button id="btn-parry-trigger" class="btn-parry-test">
+                <i class="fa-solid fa-khanda"></i> Trigger Parry Deflection Test (Simulate Combat Frame)
+              </button>
+              <div id="combat-feedback" class="combat-feedback-msg">Click above to test posture damage calculation & stagger audio triggers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. PROFESSIONAL EXPERIENCE & EDUCATION TIMELINE
+         ========================================================================== -->
+    <section id="experience" class="section-pad" style="background: linear-gradient(180deg, transparent, rgba(22, 27, 34, 0.3), transparent);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Battle-Tested Track Record</span>
+          <h2 class="section-title">Professional Experience & Education</h2>
+          <p class="section-subtitle">Real help desks, active client complaints, and multi-rack enterprise networks — where high-standard engineering was forged.</p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <!-- Item 1: IT Specialist - GIECO -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-bar">
+                <div class="timeline-role-company">
+                  <h3>IT Specialist — <span class="company-name">GIECO</span></h3>
+                </div>
+                <span class="timeline-period-badge">2026 – Present</span>
+              </div>
+              <p class="timeline-desc">
+                Configure and maintain multi-rack Cisco Catalyst networks (3560, 3750, 3850, 4900M) and Sophos firewall security policies across an active industrial production environment. Automated switch configurations directly from a single datasheet, eliminating hours of repetitive command-line entry and human error.
+              </p>
+              <div class="timeline-tech-tags">
+                <span class="timeline-tag">Cisco Catalyst Switching</span>
+                <span class="timeline-tag">Sophos Firewalls</span>
+                <span class="timeline-tag">VLAN Trunking & Rapid-PVST</span>
+                <span class="timeline-tag">Port Security</span>
+                <span class="timeline-tag">Internal Automation Tools</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Technical Support - INTELCIA -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-bar">
+                <div class="timeline-role-company">
+                  <h3>Technical Support — <span class="company-name">INTELCIA</span></h3>
+                </div>
+                <span class="timeline-period-badge">2025 – 2026</span>
+              </div>
+              <p class="timeline-desc">
+                Diagnosed complex software and connectivity faults for end users. Mastered the critical discipline of translating ambiguous, panicked user complaints into structured, reproducible technical bug reports with exact stack traces and reproduction steps for development teams.
+              </p>
+              <div class="timeline-tech-tags">
+                <span class="timeline-tag">Root-Cause Analysis</span>
+                <span class="timeline-tag">Incident Diagnostics</span>
+                <span class="timeline-tag">Bug Reproduction</span>
+                <span class="timeline-tag">Customer UX De-escalation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Retention Specialist - Sutherland -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-bar">
+                <div class="timeline-role-company">
+                  <h3>Retention Specialist — <span class="company-name">Sutherland</span></h3>
+                </div>
+                <span class="timeline-period-badge">2025</span>
+              </div>
+              <p class="timeline-desc">
+                High-volume customer contact in an uncompromising target-driven environment. Handled churn mitigation by dissecting the exact product frustrations and software roadblocks causing clients to leave, resolving underlying friction in real time.
+              </p>
+              <div class="timeline-tech-tags">
+                <span class="timeline-tag">User Friction Mapping</span>
+                <span class="timeline-tag">Active Problem Resolution</span>
+                <span class="timeline-tag">High-Stress Communication</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: IT Help Desk - Farid, MMG, GIECO -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header-bar">
+                <div class="timeline-role-company">
+                  <h3>IT Help Desk — <span class="company-name">Farid, MMG, GIECO</span></h3>
+                </div>
+                <span class="timeline-period-badge">2024 – 2025</span>
+              </div>
+              <p class="timeline-desc">
+                First-line support across hardware, operating systems, networking drops, and proprietary corporate software. Built custom Excel VBA macros and config generation scripts to streamline recurring ticketing workloads and rack documentation.
+              </p>
+              <div class="timeline-tech-tags">
+                <span class="timeline-tag">Hardware Diagnostics</span>
+                <span class="timeline-tag">Excel VBA Automation</span>
+                <span class="timeline-tag">OS Deployment</span>
+                <span class="timeline-tag">Structured Cabling</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Education & Certification -->
+          <div class="timeline-item">
+            <div class="timeline-marker education"></div>
+            <div class="timeline-card" style="border-color: rgba(255, 183, 3, 0.3);">
+              <div class="timeline-header-bar">
+                <div class="timeline-role-company">
+                  <h3>Alexandria University & Cisco Academy</h3>
+                </div>
+                <span class="timeline-period-badge" style="color: var(--accent-amber); background: var(--accent-amber-dim);">Graduation & Certification</span>
+              </div>
+              <p class="timeline-desc">
+                <strong>Software Industry and Multimedia (SIM)</strong> — Faculty of Science, Alexandria University. Focused on object-oriented programming, multimedia architecture, interactive system design, and algorithmic problem-solving.<br>
+                <strong>Cisco Certified Network Associate (CCNA)</strong> — Certified proficiency in IP routing, switching protocols, VLAN management, and network security foundations.
+              </p>
+              <div class="timeline-tech-tags">
+                <span class="timeline-tag">CCNA Certified</span>
+                <span class="timeline-tag">Software Industry & Multimedia</span>
+                <span class="timeline-tag">Data Structures & OOP</span>
+                <span class="timeline-tag">Alexandria University</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. CONTACT SECTION & INTERACTIVE FOOTER
+         ========================================================================== -->
+    <section id="contact" class="section-pad contact-section">
+      <div class="container">
+        <div class="contact-card-main">
+          <div class="contact-grid">
+            <div class="contact-left">
+              <span class="section-tag">Let's Connect</span>
+              <h2>"Let's talk Unity, Flutter, or why most campus apps fail."</h2>
+              <p class="contact-subtitle">
+                Looking for a junior mobile or game developer role with a software company in Egypt. Grounded in support discipline, ready to build resilient software from Day 1.
+              </p>
+
+              <div class="contact-methods-list">
+                <!-- Email -->
+                <div class="contact-method-item">
+                  <div class="method-icon-info">
+                    <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="method-details">
+                      <span class="method-label">DIRECT EMAIL</span>
+                      <div class="method-val">taskye3@gmail.com</div>
+                    </div>
+                  </div>
+                  <button class="btn-copy-action btn-copy-email" title="Copy to clipboard">
+                    <i class="fa-solid fa-copy"></i>
+                    <span>Copy</span>
+                  </button>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-method-item">
+                  <div class="method-icon-info">
+                    <div class="method-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="method-details">
+                      <span class="method-label">LINKEDIN PROFILE</span>
+                      <div class="method-val">linkedin.com/in/mohamesmoussa</div>
+                    </div>
+                  </div>
+                  <a href="https://linkedin.com/in/mohamesmoussa" target="_blank" rel="noopener noreferrer" class="btn-copy-action" style="color: var(--accent-cyan);">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>Open</span>
+                  </a>
+                </div>
+
+
+                <!-- GitHub -->
+                <div class="contact-method-item">
+                  <div class="method-icon-info">  
+                    <div class="method-icon"><i class="fa-brands fa-github"></i></div>
+                    <div class="method-details">
+                      <span class="method-label">GITHUB REPOSITORIES</span>
+                      <div class="method-val">github.com/HamOooOe</div>
+                    </div>
+                  </div>
+                  <a href="https://github.com/HamOooOe" target="_blank" rel="noopener noreferrer" class="btn-copy-action" style="color: var(--accent-cyan);">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>Open</span>
+                  </a>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-method-item">
+                  <div class="method-icon-info">
+                    <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="method-details">
+                      <span class="method-label">PHONE & WHATSAPP</span>
+                      <div class="method-val">+20 128 463 2150</div>
+                    </div>
+                  </div>
+                  <button class="btn-copy-action btn-copy-phone" title="Copy to clipboard">
+                    <i class="fa-solid fa-copy"></i>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Inquiry Direct Form -->
+            <div class="contact-right">
+              <form id="quick-contact-form" class="quick-message-form">
+                <h3>Send a Direct Note</h3>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-top: -8px;">
+                  Have an open junior position or want to discuss a project? Drop a message below.
+                </p>
+
+                <div class="form-group">
+                  <label for="form-name">YOUR NAME / COMPANY</label>
+                  <input type="text" id="form-name" placeholder="e.g. Engineering Lead at Cairo Tech" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-email">YOUR EMAIL</label>
+                  <input type="email" id="form-email" placeholder="name@company.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-subject">INQUIRY TYPE</label>
+                  <input type="text" id="form-subject" value="Junior Mobile / Game Developer Role">
+                </div>
+
+                <div class="form-group">
+                  <label for="form-message">MESSAGE</label>
+                  <textarea id="form-message" rows="4" placeholder="Hi Mohamed, we liked your support-to-engineering mindset..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit-message">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>Send Message via Email</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FLOATING THEME SWITCHER DOCK (LIVE COLOR PALETTES)
+       ========================================================================== -->
+  <div class="theme-picker-dock" id="theme-switcher">
+    <div class="theme-dock-label">
+      <i class="fa-solid fa-palette"></i>
+      <span>Theme:</span>
+    </div>
+    <button class="theme-palette-btn active" data-theme-name="default" data-tooltip="Electric Cyan & Amber (Default)" style="background: linear-gradient(135deg, #00F0FF, #FFB703);"></button>
+    <button class="theme-palette-btn" data-theme-name="emerald" data-tooltip="Emerald & Cyber Mint (Matrix)" style="background: linear-gradient(135deg, #00F59B, #A78BFA);"></button>
+    <button class="theme-palette-btn" data-theme-name="violet" data-tooltip="Deep Violet & Neon Coral (Synthwave)" style="background: linear-gradient(135deg, #A855F7, #F43F5E);"></button>
+    <button class="theme-palette-btn" data-theme-name="flutter" data-tooltip="Flutter Blue & Gold (Official Dev)" style="background: linear-gradient(135deg, #38BDF8, #F59E0B);"></button>
+    <button class="theme-palette-btn" data-theme-name="crimson" data-tooltip="Crimson Forge (Sekiro Combat)" style="background: linear-gradient(135deg, #FF3366, #FFD166);"></button>
+    <button class="theme-palette-btn" data-theme-name="titanium" data-tooltip="Stealth Titanium (Minimalist Apple)" style="background: linear-gradient(135deg, #FFFFFF, #94A3B8);"></button>
+  </div>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        © 2026 <strong>Mohamed Moussa</strong>. Built with precision for high-standard software delivery.
+      </div>
+      <div class="footer-meta-pill">
+        <i class="fa-solid fa-terminal"></i> Alexandria, Egypt • 31.2001° N, 29.9187° E
+      </div>
+      <a href="#hero" class="back-to-top-btn" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Script Engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>
