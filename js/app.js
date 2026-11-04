@@ -1,651 +1,166 @@
-/**
- * Mohamed Moussa - Portfolio Interactive Engine
- * Principal UI/UX & Frontend Logic
- */
+/* Mohamed Moussa — portfolio behaviour: language switch, phone story, hero cycle, YLB price engine. */
+(function () {
+  "use strict";
 
-document.addEventListener('DOMContentLoaded', () => {
-  initSplashScreen();
-  initThemeSwitcher();
-  initCounters();
-  initYlbConfigurator();
-  initVlanGenerator();
-  initCombatParrySim();
-  initSkillsFilter();
-  initContactActions();
-  initMobileNav();
-  initScrollSpy();
-});
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ==========================================================================
-   1. SPLASH SCREEN & ENTRANCE ANIMATION (0 - 2.0s)
-   ========================================================================== */
-function initSplashScreen() {
-  const splash = document.getElementById('splash-screen');
-  const splashText = document.getElementById('splash-text');
-  const skipBtn = document.getElementById('skip-splash');
-  if (!splash) return;
+  /* ---------- Arabic copy ---------- */
+  var AR = {
+    skip: "تخطَّ إلى الأعمال", nav_work: "الأعمال", nav_services: "الخدمات", nav_path: "المسار", nav_contact: "تواصل", cv: "السيرة",
+    h1: "تطبيقات لا تجعل الناس يتصلون بالدعم.",
+    lede: "أنا محمد، مطوّر Flutter من الإسكندرية. عامان على خطوط الدعم الفني علّماني كيف يبدو البرنامج المعطّل، وهذا هو المعيار الذي أبني عليه.",
+    cta_work: "شاهد الأعمال", cta_cv: "حمّل السيرة الذاتية", avail: "متاح لوظائف المطوّر المبتدئ ومشاريع العمل الحر",
+    portrait_cap: "الإسكندرية، مصر",
+    work_h: "أعمال يمكنك فتحها ولمسها",
+    sd_p: "تطبيق لإدارة أصول الشركة وتذاكر الصيانة بالـ QR. كل جهاز عليه ملصق QR؛ الموظف يمسحه للإبلاغ عن مشكلة، والفني يمسحه ليرى سجل إصلاح الجهاز كاملاً ويسجّل عمله.",
+    sd_f1: "٣ أدوار", sd_f2: "عربي + إنجليزي", sd_f3: "٦٩ اختباراً",
+    sd_note: "الشاشات هنا تعمل ببيانات تجريبية مدمجة، وليست سجلات شركة حقيقية.",
+    s1_h: "قائمة الفني", s1_p: "مفتوحة، مُسندة، قيد التنفيذ، منتهية: أربع محطات على خط واحد. التذاكر التي تغيّرت تبقى ملوّنة حتى تفتحها فلا يفوتك شيء.",
+    s2_h: "كل جهاز يحتفظ بتاريخه", s2_p: "امسح الملصق لترى سجل الصيانة والتذاكر المفتوحة والإصلاحات السابقة. الحلقة تثقب ثقباً لكل شهر خضع فيه الجهاز للصيانة.",
+    s3_h: "ملصقات جاهزة للطباعة", s3_p: "أنشئ ملصق QR لكل جهاز أو ورقة A4 كاملة. المسح يعرف دورك: الموظف يذهب للإبلاغ والفني إلى السجل.",
+    s4_h: "المدير يرى أين التذاكر", s4_p: "عدد المتأخر ومتوسط وقت الحل وبلاغات آخر سبعة أيام والأجهزة التي تتعطل مراراً.",
+    s5_h: "العربية ليست إضافة لاحقة", s5_p: "تخطيطات كاملة من اليمين لليسار وعناوين عربية. لا شيء في الواجهة مثبّت على اليسار.",
+    s6_h: "داكن حين تكون الغرفة كذلك", s6_p: "سمة داكنة تحتفظ بنفس كلمات الحالة وأشكالها، فلا يكون اللون الإشارة الوحيدة.",
+    sd_repo: "اقرأ الكود على GitHub",
+    ylb_sub: "علامتي المحلية",
+    ylb_p: "تطبيق Flutter قيد التطوير يربط مؤسسي علامات الملابس الجديدة مباشرة بمصانع الملابس المحلية. الطلب يبقى في أربع خطوات: القطعة، القماش، الطباعة والقص، طلب العينة. جرّب محرك التسعير بنفسك.",
+    cfg_g: "القطعة", cfg_f: "القماش", cfg_p: "الطباعة والتشطيب", cfg_q: "حجم الدفعة", pcs: "قطعة",
+    g1: "هودي ثقيل", g2: "تيشيرت واسع", g3: "بنطلون كارجو", g4: "جاكيت بومبر",
+    f1: "فرنش تيري ٤٢٠ جرام", f2: "قطن مسرّح ٢٤٠ جرام", f3: "فليس مبطّن ٣٨٠ جرام", f4: "ريب ستوب تقني ٣٠٠ جرام",
+    p1: "تطريز ثلاثي الأبعاد", p2: "طباعة حرير", p3: "طباعة مباشرة", p4: "غسل حمضي",
+    q_unit: "سعر القطعة", q_disc: "خصم الكمية", q_total: "إجمالي الدفعة",
+    w_p: "تطبيق مواصلات للطلاب لمشكلة رأيت زملائي يواجهونها كل صباح. كنت مسؤولاً عن تحديد المشكلة والتصميم والتدفقات الأساسية.",
+    w_p2: "اختر محطتك، شاهد الحافلة القادمة، واحجز مقعداً بلمستين. ذاكرة مؤقتة للجداول تُبقيه يعمل عندما تضعف الإشارة بين أنفاق الحرم الجامعي.",
+    w_f: "يعمل دون اتصال",
+    n_p: "لعبة بقاء بُنيت بـ Unity و C# في كلية العلوم، جامعة الإسكندرية.",
+    n_p2: "أول مشروع أُسلّمه من البداية للنهاية: من مستودع فارغ إلى نسخة جاهزة للعب.",
+    b_p: "محرك قتال على طراز Sekiro قيد التطوير، يقوم على الصدّ وتوقيت الدفاع وضغط التوازن و٢٠ مرحلة متصاعدة.",
+    b_p2: "إذا أخطأ توقيت الصدّ بـ ٦٠ ميلي ثانية ينكسر التوازن. أعمل على الأنظمة والإحساس والاتجاه الفني.",
+    b_f: "قيد التطوير",
+    sv_h: "وظّفني لبناء أو لإصلاح",
+    sv1_h: "من تصميم Figma إلى تطبيق Flutter", sv1_p: "شاشاتك مبنية كتطبيق أندرويد يعمل: تخطيطات مطابقة وكود Dart نظيف، مع العربية والوضع الداكن عند الطلب.",
+    sv2_h: "إصلاح الأخطاء وإضافة الميزات", sv2_p: "أرسل لي المشروع والمشكلة. أجد السبب وأصلحه أو أضيف الميزة بأسلوب كودك وأشرح ما تغيّر.",
+    sv3_h: "تطبيق كامل مع خادم", sv3_p: "تسجيل دخول وأدوار وقاعدة بيانات وتخزين صور وتحديثات فورية عبر Supabase أو Firebase، يُسلَّم كمشروع تستطيع تشغيله.",
+    pa_h: "من خط الدعم إلى الكود",
+    pa_q: "على خط الدعم تتعلم بسرعة: المستخدم ليس مرتبكاً، المنتج هو المرتبك.",
+    pa_p: "قضيت سنة ونصفاً أجيب أناساً تعطّل برنامجهم للتو، وتعلمت تحويل الشكوى المذعورة إلى بلاغ خطأ قابل للتكرار. وفي مكان ما توقفت عن الرغبة في إصلاح برامج الآخرين وبدأت أبني برنامجي.",
+    now: "الآن",
+    e1_h: "أخصائي تقنية معلومات، GIECO", e1_p: "أصون شبكات Cisco Catalyst متعددة الأرفف وجدران Sophos النارية، وأوتمت وأوثّق الإعدادات من جداول بيانات موحّدة.",
+    e2_h: "أخصائي دعم فني، INTELCIA", e2_p: "شخّصت أعطال البرمجيات والاتصال والإعدادات وحوّلتها إلى بلاغات أخطاء منظمة.",
+    e3_h: "أخصائي احتفاظ بالعملاء، Sutherland", e3_p: "عالجت الأسباب الجذرية للشكاوى التقنية والخدمية في فريق كبير الحجم قائم على الأهداف.",
+    e4_h: "مكتب مساعدة تقنية، فريد وMMG وGIECO", e4_p: "دعم من الخط الأول للأجهزة وأنظمة التشغيل والبرمجيات، مع أدوات أتمتة قلّلت العمل المتكرر.",
+    e5_h: "جامعة الإسكندرية وCCNA", e5_p: "صناعة البرمجيات والوسائط المتعددة (SIM)، كلية العلوم. شهادة Cisco Certified Network Associate.",
+    ct_h: "عندك فكرة تطبيق، أو خطأ لا يريد أن يموت؟",
+    ct_copy: "انسخ البريد", cv_full: "حمّل السيرة الذاتية",
+    ct_lang: "العربية (لغة أم)، الإنجليزية (مهنية). مقيم في الإسكندرية، مصر.",
+    top: "العودة للأعلى"
+  };
 
-  const phrase = "Find the friction. Remove it.";
-  let charIdx = 0;
-  let isSkipped = false;
+  var nodes = Array.prototype.slice.call(document.querySelectorAll("[data-i18n]"));
+  nodes.forEach(function (n) { n.setAttribute("data-en", n.innerHTML); });
 
-  function dismissSplash() {
-    if (isSkipped) return;
-    isSkipped = true;
-    splash.classList.add('fade-out');
-    setTimeout(() => {
-      splash.style.display = 'none';
-    }, 850);
-  }
+  function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 
-  // Typewriter effect
-  function typeChar() {
-    if (isSkipped) return;
-    if (charIdx < phrase.length) {
-      splashText.textContent += phrase.charAt(charIdx);
-      charIdx++;
-      setTimeout(typeChar, 45);
-    } else {
-      // Pause briefly at the completed punchline, then transition smoothly
-      setTimeout(dismissSplash, 650);
-    }
-  }
-
-  // Start after small initial pause
-  setTimeout(typeChar, 350);
-
-  // Manual skip handlers
-  if (skipBtn) {
-    skipBtn.addEventListener('click', dismissSplash);
-  }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
-      dismissSplash();
-    }
-  }, { once: true });
-}
-
-/* ==========================================================================
-   THEME SWITCHER ENGINE (LIVE PALETTES)
-   ========================================================================== */
-function initThemeSwitcher() {
-  const themeBtns = document.querySelectorAll('.theme-palette-btn');
-  const savedTheme = localStorage.getItem('mm_portfolio_theme') || 'default';
-
-  function applyTheme(name) {
-    if (name === 'default') {
-      document.documentElement.removeAttribute('data-theme');
-    } else {
-      document.documentElement.setAttribute('data-theme', name);
-    }
-
-    themeBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('data-theme-name') === name);
+  var langBtn = document.getElementById("lang");
+  function setLang(l) {
+    var ar = l === "ar";
+    document.documentElement.lang = ar ? "ar" : "en";
+    document.documentElement.dir = ar ? "rtl" : "ltr";
+    nodes.forEach(function (n) {
+      var key = n.getAttribute("data-i18n");
+      n.innerHTML = ar && AR[key] ? AR[key] : n.getAttribute("data-en");
     });
+    langBtn.textContent = ar ? "English" : "العربية";
+    document.title = ar ? "محمد موسى | مطوّر Flutter في الإسكندرية" : "Mohamed Moussa | Flutter developer in Alexandria";
+    store("lang", l);
+    quote();
+  }
+  langBtn.addEventListener("click", function () {
+    setLang(document.documentElement.lang === "ar" ? "en" : "ar");
+  });
 
-    localStorage.setItem('mm_portfolio_theme', name);
+  /* ---------- nav border on scroll ---------- */
+  var nav = document.getElementById("nav");
+  function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- hero phone: cycle screens ---------- */
+  var heroScr = document.querySelectorAll(".phone-hero .scr");
+  var hi = 0;
+  if (heroScr.length > 1 && !reduce) {
+    setInterval(function () {
+      heroScr[hi].classList.remove("on");
+      hi = (hi + 1) % heroScr.length;
+      heroScr[hi].classList.add("on");
+    }, 3400);
   }
 
-  // Initial load
-  applyTheme(savedTheme);
+  /* ---------- ScanDesk story: sticky phone follows the step in view ---------- */
+  var steps = document.querySelectorAll(".step");
+  var stickyScr = document.querySelectorAll(".phone-sticky .scr");
+  function show(i) {
+    stickyScr.forEach(function (s, idx) { s.classList.toggle("on", idx === i); });
+    steps.forEach(function (s, idx) { s.classList.toggle("on", idx === i); });
+  }
+  if ("IntersectionObserver" in window && steps.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) show(parseInt(e.target.getAttribute("data-screen"), 10));
+      });
+    }, { rootMargin: "-45% 0px -45% 0px", threshold: 0 });
+    steps.forEach(function (s) { io.observe(s); });
+    show(0);
+  }
 
-  // Button clicks
-  themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const themeName = btn.getAttribute('data-theme-name');
-      applyTheme(themeName);
-      showToast(`Theme switched to: ${btn.getAttribute('data-tooltip').split('(')[0].trim()}`);
+  /* ---------- YLB price engine (same maths as the app prototype) ---------- */
+  var state = { base: 28, mult: 1.25, print: 6.5, qty: 25 };
+  function discount(q) { return q >= 100 ? 0.72 : q >= 50 ? 0.82 : q >= 25 ? 0.90 : q >= 10 ? 0.96 : 1; }
+  function quote() {
+    var d = discount(state.qty);
+    var unit = (state.base * state.mult + state.print) * d;
+    var total = unit * state.qty;
+    var fmt = function (n) { return "$" + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","); };
+    document.getElementById("q-unit").textContent = fmt(unit);
+    document.getElementById("q-disc").textContent = Math.round((1 - d) * 100) + "%";
+    document.getElementById("q-total").textContent = fmt(total);
+    document.getElementById("qty-out").textContent = state.qty;
+  }
+  document.querySelectorAll(".opts").forEach(function (group) {
+    var key = group.getAttribute("data-key");
+    group.addEventListener("click", function (e) {
+      var b = e.target.closest(".opt");
+      if (!b) return;
+      group.querySelectorAll(".opt").forEach(function (o) { o.classList.remove("on"); o.setAttribute("aria-pressed", "false"); });
+      b.classList.add("on");
+      b.setAttribute("aria-pressed", "true");
+      state[key] = parseFloat(b.getAttribute("data-v"));
+      quote();
     });
   });
-}
+  document.getElementById("qty").addEventListener("input", function (e) {
+    state.qty = parseInt(e.target.value, 10);
+    quote();
+  });
+  quote();
 
-/* ==========================================================================
-   2. ANIMATED KEY METRICS COUNTERS
-   ========================================================================== */
-function initCounters() {
-  const counterElements = document.querySelectorAll('.metric-val');
-  let hasAnimated = false;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !hasAnimated) {
-        hasAnimated = true;
-        animateAllCounters();
-      }
-    });
-  }, { threshold: 0.3 });
-
-  const metricsSection = document.querySelector('.metrics-counter-grid');
-  if (metricsSection) {
-    observer.observe(metricsSection);
-  }
-
-  function animateAllCounters() {
-    counterElements.forEach(el => {
-      const target = parseFloat(el.getAttribute('data-target') || '0');
-      const isDecimal = target % 1 !== 0;
-      const duration = 1600; // ms
-      const steps = 40;
-      const stepDuration = duration / steps;
-      let current = 0;
-      const increment = target / steps;
-
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
-          clearInterval(timer);
-        } else {
-          el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
-        }
-      }, stepDuration);
-    });
-  }
-}
-
-/* ==========================================================================
-   3. YLB (YOUR LOCAL BRAND) 4-STEP FLOW CONFIGURATOR
-   ========================================================================== */
-function initYlbConfigurator() {
-  const state = {
-    step: 1,
-    garment: 'Heavyweight Hoodie',
-    basePrice: 28.00,
-    fabric: '100% French Terry Cotton (420 GSM)',
-    fabricMultiplier: 1.25,
-    customization: 'High-Density Puff Embroidery',
-    customCost: 6.50,
-    colorName: 'Onyx Black',
-    colorHex: '#181A20',
-    quantity: 25,
-    expressShipping: false
-  };
-
-  const garmentSVGs = {
-    'Heavyweight Hoodie': `<path d="M50 35 L75 20 L105 20 L130 35 L120 70 L105 60 L105 130 L75 130 L75 60 L60 70 Z" fill="currentColor" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>`,
-    'Oversized Tee': `<path d="M45 40 L70 25 L110 25 L135 40 L120 65 L108 58 L108 135 L72 135 L72 58 L60 65 Z" fill="currentColor" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>`,
-    'Cargo Trousers': `<path d="M65 30 L115 30 L122 135 L100 135 L90 75 L80 135 L58 135 Z" fill="currentColor" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>`,
-    'Bomber Jacket': `<path d="M45 35 L75 22 L105 22 L135 35 L122 80 L108 65 L108 130 L72 130 L72 65 L58 80 Z" fill="currentColor" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>`
-  };
-
-  // DOM elements
-  const stepIndicators = document.querySelectorAll('.step-indicator-btn');
-  const panes = document.querySelectorAll('.config-step-pane');
-  const garmentCards = document.querySelectorAll('[data-config-step="1"] .config-option-card');
-  const fabricCards = document.querySelectorAll('[data-config-step="2"] .config-option-card');
-  const customCards = document.querySelectorAll('[data-config-step="3"] .config-option-card');
-  const colorSwatches = document.querySelectorAll('.color-swatch-btn');
-  const qtySlider = document.getElementById('ylb-qty-slider');
-  const qtyDisplay = document.getElementById('ylb-qty-display');
-  
-  // Preview DOM
-  const previewGarment = document.getElementById('ylb-svg-path');
-  const previewGarmentSvg = document.getElementById('ylb-preview-svg');
-  const previewSpecBadge = document.getElementById('ylb-live-spec');
-  const sumGarment = document.getElementById('sum-garment');
-  const sumFabric = document.getElementById('sum-fabric');
-  const sumCustom = document.getElementById('sum-custom');
-  const sumUnits = document.getElementById('sum-units');
-  const priceUnitDisplay = document.getElementById('ylb-price-per-unit');
-  const priceTotalDisplay = document.getElementById('ylb-price-total');
-  const trackingTimeDisplay = document.getElementById('ylb-turnaround-time');
-
-  function calculatePricing() {
-    // Volume discount curve
-    let volumeDiscount = 1.0;
-    if (state.quantity >= 100) volumeDiscount = 0.72;
-    else if (state.quantity >= 50) volumeDiscount = 0.82;
-    else if (state.quantity >= 25) volumeDiscount = 0.90;
-    else if (state.quantity >= 10) volumeDiscount = 0.96;
-
-    const unitPrice = ((state.basePrice * state.fabricMultiplier) + state.customCost) * volumeDiscount;
-    const totalPrice = unitPrice * state.quantity;
-
-    let leadDays = state.quantity > 50 ? "7-9 Business Days" : "4-6 Business Days";
-
-    return {
-      unitPrice: unitPrice.toFixed(2),
-      totalPrice: totalPrice.toFixed(2),
-      leadDays
+  /* ---------- copy email ---------- */
+  var copy = document.getElementById("copy");
+  copy.addEventListener("click", function () {
+    var mail = document.getElementById("mail").textContent;
+    var span = copy.querySelector("span");
+    var done = function () {
+      var prev = span.innerHTML;
+      span.textContent = document.documentElement.lang === "ar" ? "تم النسخ" : "Copied";
+      setTimeout(function () { span.innerHTML = prev; }, 1600);
     };
-  }
-
-  function updateUI() {
-    // Update active tab buttons
-    stepIndicators.forEach(btn => {
-      const stepNum = parseInt(btn.getAttribute('data-step') || '1');
-      btn.classList.toggle('active', stepNum === state.step);
-      btn.classList.toggle('completed', stepNum < state.step);
-    });
-
-    // Update active pane
-    panes.forEach(pane => {
-      const paneStep = parseInt(pane.getAttribute('data-config-step') || '1');
-      pane.classList.toggle('active', paneStep === state.step);
-    });
-
-    // Update summary table
-    if (sumGarment) sumGarment.textContent = `${state.garment} (${state.colorName})`;
-    if (sumFabric) sumFabric.textContent = state.fabric;
-    if (sumCustom) sumCustom.textContent = state.customization;
-    if (sumUnits) sumUnits.textContent = `${state.quantity} pcs`;
-
-    // Calculate dynamic price
-    const pricing = calculatePricing();
-    if (priceUnitDisplay) priceUnitDisplay.textContent = `$${pricing.unitPrice}`;
-    if (priceTotalDisplay) priceTotalDisplay.textContent = `$${pricing.totalPrice}`;
-    if (trackingTimeDisplay) trackingTimeDisplay.textContent = `Estimated Production & Dispatch: ${pricing.leadDays}`;
-
-    // Update preview SVG visual
-    if (previewGarmentSvg) {
-      previewGarmentSvg.style.color = state.colorHex;
-    }
-    if (previewSpecBadge) {
-      previewSpecBadge.textContent = `${state.garment} • ${state.colorName}`;
-    }
-    if (previewGarment && garmentSVGs[state.garment]) {
-      previewGarment.innerHTML = garmentSVGs[state.garment];
-    }
-  }
-
-  // Bind step navigation
-  stepIndicators.forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.step = parseInt(btn.getAttribute('data-step') || '1');
-      updateUI();
-    });
-  });
-
-  document.querySelectorAll('.btn-step-next').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (state.step < 4) {
-        state.step++;
-        updateUI();
-      }
-    });
-  });
-
-  document.querySelectorAll('.btn-step-prev').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (state.step > 1) {
-        state.step--;
-        updateUI();
-      }
-    });
-  });
-
-  // Step 1: Garment Selection
-  garmentCards.forEach(card => {
-    card.addEventListener('click', () => {
-      garmentCards.forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-      state.garment = card.getAttribute('data-garment');
-      state.basePrice = parseFloat(card.getAttribute('data-price') || '25');
-      updateUI();
-    });
-  });
-
-  // Step 2: Fabric Selection
-  fabricCards.forEach(card => {
-    card.addEventListener('click', () => {
-      fabricCards.forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-      state.fabric = card.getAttribute('data-fabric');
-      state.fabricMultiplier = parseFloat(card.getAttribute('data-multiplier') || '1');
-      updateUI();
-    });
-  });
-
-  // Step 3: Customization
-  customCards.forEach(card => {
-    card.addEventListener('click', () => {
-      customCards.forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-      state.customization = card.getAttribute('data-custom');
-      state.customCost = parseFloat(card.getAttribute('data-cost') || '0');
-      updateUI();
-    });
-  });
-
-  // Color Swatches
-  colorSwatches.forEach(swatch => {
-    swatch.addEventListener('click', () => {
-      colorSwatches.forEach(s => s.classList.remove('active'));
-      swatch.classList.add('active');
-      state.colorName = swatch.getAttribute('data-color-name');
-      state.colorHex = swatch.getAttribute('data-color-hex');
-      updateUI();
-    });
-  });
-
-  // Quantity Slider
-  if (qtySlider && qtyDisplay) {
-    qtySlider.addEventListener('input', (e) => {
-      state.quantity = parseInt(e.target.value);
-      qtyDisplay.textContent = `${state.quantity} pcs`;
-      updateUI();
-    });
-  }
-
-  // Initial draw
-  updateUI();
-}
-
-/* ==========================================================================
-   4. CISCO VLAN CONFIG GENERATOR (INTERNAL AUTOMATION TOOL)
-   ========================================================================== */
-function initVlanGenerator() {
-  const switchModel = document.getElementById('vlan-switch-model');
-  const hostnameInput = document.getElementById('vlan-hostname');
-  const mgmtIpInput = document.getElementById('vlan-mgmt-ip');
-  const vlanProfileSelect = document.getElementById('vlan-profile');
-  const btnGenerate = document.getElementById('btn-generate-cli');
-  const cliOutput = document.getElementById('cli-code-output');
-  const btnCopyCli = document.getElementById('btn-copy-cli');
-
-  if (!btnGenerate || !cliOutput) return;
-
-  function generateCLI() {
-    const sw = switchModel ? switchModel.value : 'Catalyst 3850';
-    const host = (hostnameInput && hostnameInput.value.trim()) || 'ALX-DIST-SW01';
-    const mgmt = (mgmtIpInput && mgmtIpInput.value.trim()) || '10.20.10.15';
-    const profile = vlanProfileSelect ? vlanProfileSelect.value : 'campus';
-
-    let vlanDefs = '';
-    if (profile === 'campus') {
-      vlanDefs = `! === VLAN ARCHITECTURE ===
-vlan 10
- name CAMPUS_STUDENTS
-vlan 20
- name FACULTY_STAFF
-vlan 30
- name VOIP_TELEPHONY
-vlan 99
- name INFRA_MANAGEMENT
-exit`;
-    } else if (profile === 'industrial') {
-      vlanDefs = `! === INDUSTRIAL SITE VLANS ===
-vlan 100
- name SCADA_SENSORS
-vlan 200
- name FACTORY_PLC
-vlan 300
- name CCTV_SECURITY
-vlan 999
- name IT_ISOLATED_MGMT
-exit`;
-    } else {
-      vlanDefs = `! === STANDARD ENTERPRISE VLANS ===
-vlan 10
- name DATA_USERS
-vlan 50
- name GUEST_WIFI
-vlan 80
- name SERVERS_APP
-vlan 99
- name NETWORK_OOB
-exit`;
-    }
-
-    const script = `! *************************************************************
-! CISCO SWITCH AUTOMATED CONFIGURATION SCRIPT
-! Generated by Mohamed Moussa's Internal Tooling Suite
-! Target: Cisco ${sw} | Site: Alexandria, Egypt
-! *************************************************************
-enable
-configure terminal
-hostname ${host}
-!
-no ip domain-lookup
-service password-encryption
-spanning-tree mode rapid-pvst
-!
-${vlanDefs}
-!
-! === UPLINK TRUNK CONFIGURATION ===
-interface GigabitEthernet1/0/48
- description TRUNK_TO_SOPHOS_FIREWALL_CORE
- switchport mode trunk
- switchport trunk native vlan 99
- switchport trunk allowed vlan 10,20,30,99
- switchport nonegotiate
- spanning-tree portfast trunk
-!
-! === MANAGEMENT INTERFACE ===
-interface Vlan99
- description MANAGEMENT_SVI
- ip address ${mgmt} 255.255.255.0
- no shutdown
-exit
-ip default-gateway 10.20.10.1
-!
-! === DEFENSIVE PORT SECURITY TEMPLATE ===
-interface range GigabitEthernet1/0/1 - 24
- switchport mode access
- switchport access vlan 10
- switchport voice vlan 30
- switchport port-security
- switchport port-security maximum 2
- switchport port-security violation restrict
- spanning-tree portfast
- spanning-tree bpduguard enable
-!
-end
-write memory
-! [SUCCESS: Switch ${host} configuration compiled and ready for deployment]`;
-
-    cliOutput.textContent = script;
-  }
-
-  btnGenerate.addEventListener('click', generateCLI);
-
-  if (btnCopyCli) {
-    btnCopyCli.addEventListener('click', () => {
-      const textToCopy = cliOutput.textContent;
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast("Cisco Switch Configuration copied to clipboard!");
-      }).catch(() => {
-        showToast("CLI text selected!");
-      });
-    });
-  }
-
-  // Generate default once
-  generateCLI();
-}
-
-/* ==========================================================================
-   5. ONE BOSS - PARRY & DEFLECTION COMBAT SIMULATOR
-   ========================================================================== */
-function initCombatParrySim() {
-  const btnParry = document.getElementById('btn-parry-trigger');
-  const postureFill = document.getElementById('posture-fill-bar');
-  const posturePct = document.getElementById('posture-pct-label');
-  const feedbackMsg = document.getElementById('combat-feedback');
-
-  if (!btnParry || !postureFill) return;
-
-  let currentPosture = 65;
-  const messages = [
-    "⚔️ PERFECT DEFLECTION! Boss posture +15%. Frame-perfect window!",
-    "💥 HEAVY PARRY! Sound cue triggered, boss stagger meter climbing.",
-    "🛡️ DEFLECTED! High posture damage dealt, player stamina intact.",
-    "⚡ COUNTER-STRIKE! Boss encounter phase 7 threshold reached!"
-  ];
-
-  btnParry.addEventListener('click', () => {
-    // Add posture damage
-    currentPosture = Math.min(100, currentPosture + 12);
-    postureFill.style.width = `${currentPosture}%`;
-    if (posturePct) posturePct.textContent = `${currentPosture}% / 100% (STAGGER THRESHOLD)`;
-
-    const randomMsg = messages[Math.floor(Math.random() * messages.length)];
-    if (feedbackMsg) {
-      feedbackMsg.textContent = randomMsg;
-      feedbackMsg.style.color = currentPosture >= 95 ? "#FF5F56" : "#00F0FF";
-    }
-
-    if (currentPosture >= 100) {
-      feedbackMsg.textContent = "🔥 POSTURE BROKEN! Boss vulnerability window opened for critical strike!";
-      feedbackMsg.style.color = "#FFB703";
-      setTimeout(() => {
-        currentPosture = 30;
-        postureFill.style.width = `${currentPosture}%`;
-        if (posturePct) posturePct.textContent = `${currentPosture}% / 100%`;
-      }, 2500);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(mail).then(done, function () {});
     }
   });
-}
 
-/* ==========================================================================
-   6. SKILLS MATRIX FILTER
-   ========================================================================== */
-function initSkillsFilter() {
-  const filterBtns = document.querySelectorAll('.skill-filter-btn');
-  const categoryCards = document.querySelectorAll('.skill-category-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter') || 'all';
-
-      categoryCards.forEach(card => {
-        const cat = card.getAttribute('data-category');
-        if (filter === 'all' || cat === filter) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-}
-
-/* ==========================================================================
-   7. CONTACT ACTIONS & TOAST
-   ========================================================================== */
-function showToast(message) {
-  let toast = document.getElementById('app-toast');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'app-toast';
-    toast.className = 'toast-notice';
-    document.body.appendChild(toast);
-  }
-  toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${message}</span>`;
-  toast.classList.add('show');
-
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 3200);
-}
-
-function initContactActions() {
-  // Email Copy button
-  const copyEmailBtns = document.querySelectorAll('.btn-copy-email');
-  copyEmailBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const email = 'taskye3@gmail.com';
-      navigator.clipboard.writeText(email).then(() => {
-        showToast("Copied taskye3@gmail.com to clipboard!");
-      });
-    });
-  });
-
-  // Phone Copy button
-  const copyPhoneBtns = document.querySelectorAll('.btn-copy-phone');
-  copyPhoneBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const phone = '+201284632150';
-      navigator.clipboard.writeText(phone).then(() => {
-        showToast("Copied +20 128 463 2150 to clipboard!");
-      });
-    });
-  });
-
-  // Message Form Submit
-  const contactForm = document.getElementById('quick-contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('form-name')?.value || '';
-      const email = document.getElementById('form-email')?.value || '';
-      const subject = document.getElementById('form-subject')?.value || 'Junior Mobile / Game Developer Role';
-      const msg = document.getElementById('form-message')?.value || '';
-
-      const mailtoLink = `mailto:taskye3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + msg)}`;
-      window.location.href = mailtoLink;
-      showToast("Redirecting to your email client to send message...");
-      contactForm.reset();
-    });
-  }
-}
-
-/* ==========================================================================
-   8. MOBILE NAVIGATION & SCROLL SPY
-   ========================================================================== */
-function initMobileNav() {
-  const toggleBtn = document.querySelector('.nav-toggle-btn');
-  const drawer = document.querySelector('.mobile-menu-drawer');
-  const nav = document.querySelector('.site-nav');
-
-  if (toggleBtn && drawer) {
-    toggleBtn.addEventListener('click', () => {
-      drawer.classList.toggle('open');
-      const icon = toggleBtn.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
-      }
-    });
-
-    drawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        drawer.classList.remove('open');
-        const icon = toggleBtn.querySelector('i');
-        if (icon) {
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-xmark');
-        }
-      });
-    });
-  }
-
-  // Sticky nav background on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }, { passive: true });
-}
-
-function initScrollSpy() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.scrollY + 120;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  }, { passive: true });
-}
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  var asked = /[?&]lang=(ar|en)/.exec(window.location.search);
+  if ((asked && asked[1] === "ar") || (!asked && load("lang") === "ar")) setLang("ar");
+})();
